@@ -24,20 +24,21 @@ On Master node only :
 11) sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 12) sudo chown $(id -u):$(id -g) $HOME/.kube/config
 13) kubectl get nodes
-14) sudo kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
-15) kubectl get pods --all-namespaces
-16) kubectl get nodes
+14) kubectl get pods --all-namespaces
+15) sudo kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
+16) kubectl get pods --all-namespaces
+17) kubectl get nodes
 
 ---------------------
 On Slave nodes only :
 ---------------------
 [ Use the kubeadm join command ouput from your master kubeadm init command output . DO NOT USE BELOW COMMAND AS IT IS ]
 
-17) kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
+18) kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
 
 -----------
 Master Node
 -----------
-18) kubectl get nodes
+19) kubectl get nodes
 
 ----------------------------------END--------------------------------
