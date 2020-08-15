@@ -14,32 +14,32 @@ On all 3 nodes :
 5) curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 6) sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 7) sudo apt update
-7) sudo apt install kubeadm -y
-8) kubeadm version
+8) sudo apt install kubeadm -y
+9) kubeadm version
 
 --------------------
 On Master node only :
 --------------------
-9) sudo kubeadm init
-10) mkdir -p $HOME/.kube
-11) sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-12) sudo chown $(id -u):$(id -g) $HOME/.kube/config
-13) kubectl get nodes
-14) kubectl get pods --all-namespaces
-15) sudo kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
-16) kubectl get pods --all-namespaces
-17) kubectl get nodes
+10) sudo kubeadm init
+11) mkdir -p $HOME/.kube
+12) sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+13) sudo chown $(id -u):$(id -g) $HOME/.kube/config
+14) kubectl get nodes
+15) kubectl get pods --all-namespaces
+16) sudo kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
+17) kubectl get pods --all-namespaces
+18) kubectl get nodes
 
 ---------------------
 On Slave nodes only :
 ---------------------
 [ Use the kubeadm join command ouput from your master kubeadm init command output . DO NOT USE BELOW COMMAND AS IT IS ]
 
-18) kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
+19) kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
 
 -----------
 Master Node
 -----------
-19) kubectl get nodes
+20) kubectl get nodes
 
 ----------------------------------END--------------------------------
