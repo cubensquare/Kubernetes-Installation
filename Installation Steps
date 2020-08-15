@@ -13,6 +13,7 @@ On all 3 nodes :
 4) sudo systemctl enable docker
 5) curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 6) sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+7) sudo apt update
 7) sudo apt install kubeadm -y
 8) kubeadm version
 
