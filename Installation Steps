@@ -16,31 +16,31 @@ On all 3 nodes :
 7) echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 8) sudo apt-get update
 9) sudo apt-get install -y kubelet kubeadm kubectl
-10) sudo apt-mark hold kubelet kubeadm kubectl
+
 
 --------------------
 On Master node only :
 --------------------
-11) sudo kubeadm init
-12) mkdir -p $HOME/.kube
-13) sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-14) sudo chown $(id -u):$(id -g) $HOME/.kube/config
-15) kubectl get nodes
-16) kubectl get pods --all-namespaces
-17) kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-18) kubectl get pods --all-namespaces
-19) kubectl get nodes
+10) sudo kubeadm init
+11) mkdir -p $HOME/.kube
+12) sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+13) sudo chown $(id -u):$(id -g) $HOME/.kube/config
+14) kubectl get nodes
+15) kubectl get pods --all-namespaces
+16) kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+17) kubectl get pods --all-namespaces
+18) kubectl get nodes
 
 ---------------------
 On Slave nodes only :
 ---------------------
 [ Use the kubeadm join command ouput from your master kubeadm init command output . DO NOT USE BELOW COMMAND AS IT IS ]
 
-20) sudo kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
+19) sudo kubeadm join 192.168.100.6:6443 --token 06tl4c.oqn35jzecidg0r0m --discovery-token-ca-cert-hash sha256:c40f5fa0aba6ba311efcdb0e8cb637ae0eb8ce27b7a03d47be6d966142f2204c
 
 -----------
 Master Node
 -----------
-21) kubectl get nodes
+20) kubectl get nodes
 
 ----------------------------------END--------------------------------
