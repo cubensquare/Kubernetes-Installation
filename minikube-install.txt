@@ -1,7 +1,7 @@
 #### Install minikube :
 
 
---> sudo usermod -aG docker krs67142
+--> sudo usermod -aG docker <your-user-id>
 --> sudo su - 
 --> su - <your-login-id>
 --> docker info    [ this command should work without sudo privilege ]
