@@ -1,5 +1,9 @@
 #### Install minikube :
 
+# Install docker
+--> sudo apt update
+--> sudo apt install docker.io -y
+
 ## Add the user to Docker group . By doing this , sudo privilege is not required to access docker details
 --> sudo usermod -aG docker <your-user-id>
 --> sudo su - 
